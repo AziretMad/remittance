@@ -1,0 +1,754 @@
+2022-10-05 11:26:39.676  INFO 9780 --- [main] c.c.remittance.RemittanceApplication     : Starting RemittanceApplication using Java 11.0.16 on bsk-n041022-10 with PID 9780 (C:\Users\Public\Projects\remittance\target\classes started by az_madumarov in C:\Users\Public\Projects\remittance)
+2022-10-05 11:26:39.676  INFO 9780 --- [main] c.c.remittance.RemittanceApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-10-05 11:26:40.401  INFO 9780 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-05 11:26:40.448  INFO 9780 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 5 JPA repository interfaces.
+2022-10-05 11:26:40.841  INFO 9780 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-10-05 11:26:40.841  INFO 9780 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-05 11:26:40.841  INFO 9780 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-05 11:26:40.919  INFO 9780 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-05 11:26:40.935  INFO 9780 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1212 ms
+2022-10-05 11:26:41.139  INFO 9780 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-05 11:26:41.171  INFO 9780 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-05 11:26:41.264  INFO 9780 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-05 11:26:41.327  INFO 9780 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-10-05 11:26:41.448  INFO 9780 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-10-05 11:26:41.482  INFO 9780 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-10-05 11:26:42.047  INFO 9780 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-05 11:26:42.063  INFO 9780 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-05 11:26:42.472  WARN 9780 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration': Unsatisfied dependency expressed through method 'setFilterChains' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'filterChain' defined in class path resource [com/company/remittance/config/SecurityConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'filterChain' threw exception; nested exception is java.lang.IllegalArgumentException: 'remittances' is not a valid forward URL
+2022-10-05 11:26:42.472  INFO 9780 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-05 11:26:42.472  INFO 9780 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-10-05 11:26:42.495  INFO 9780 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-10-05 11:26:42.497  INFO 9780 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-10-05 11:26:42.499  INFO 9780 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-10-05 11:26:42.531 ERROR 9780 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration': Unsatisfied dependency expressed through method 'setFilterChains' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'filterChain' defined in class path resource [com/company/remittance/config/SecurityConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'filterChain' threw exception; nested exception is java.lang.IllegalArgumentException: 'remittances' is not a valid forward URL
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:767) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:719) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.23.jar:5.3.23]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.23.jar:5.3.23]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.4.jar:2.7.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-2.7.4.jar:2.7.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.4.jar:2.7.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.4.jar:2.7.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.7.4.jar:2.7.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-2.7.4.jar:2.7.4]
+	at com.company.remittance.RemittanceApplication.main(RemittanceApplication.java:10) ~[classes/:na]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'filterChain' defined in class path resource [com/company/remittance/config/SecurityConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'filterChain' threw exception; nested exception is java.lang.IllegalArgumentException: 'remittances' is not a valid forward URL
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1609) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1573) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1462) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1349) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:759) ~[spring-beans-5.3.23.jar:5.3.23]
+	... 20 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'filterChain' threw exception; nested exception is java.lang.IllegalArgumentException: 'remittances' is not a valid forward URL
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.3.23.jar:5.3.23]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-5.3.23.jar:5.3.23]
+	... 36 common frames omitted
+Caused by: java.lang.IllegalArgumentException: 'remittances' is not a valid forward URL
+	at org.springframework.util.Assert.isTrue(Assert.java:139) ~[spring-core-5.3.23.jar:5.3.23]
+	at org.springframework.security.web.authentication.ForwardAuthenticationSuccessHandler.<init>(ForwardAuthenticationSuccessHandler.java:46) ~[spring-security-web-5.7.3.jar:5.7.3]
+	at org.springframework.security.config.annotation.web.configurers.FormLoginConfigurer.successForwardUrl(FormLoginConfigurer.java:225) ~[spring-security-config-5.7.3.jar:5.7.3]
+	at com.company.remittance.config.SecurityConfig.lambda$filterChain$1(SecurityConfig.java:36) ~[classes/:na]
+	at org.springframework.security.config.annotation.web.builders.HttpSecurity.formLogin(HttpSecurity.java:2316) ~[spring-security-config-5.7.3.jar:5.7.3]
+	at com.company.remittance.config.SecurityConfig.filterChain(SecurityConfig.java:34) ~[classes/:na]
+	at com.company.remittance.config.SecurityConfig$$EnhancerBySpringCGLIB$$6e707f91.CGLIB$filterChain$1(<generated>) ~[classes/:na]
+	at com.company.remittance.config.SecurityConfig$$EnhancerBySpringCGLIB$$6e707f91$$FastClassBySpringCGLIB$$e4f76e6c.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) ~[spring-core-5.3.23.jar:5.3.23]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331) ~[spring-context-5.3.23.jar:5.3.23]
+	at com.company.remittance.config.SecurityConfig$$EnhancerBySpringCGLIB$$6e707f91.filterChain(<generated>) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.3.23.jar:5.3.23]
+	... 37 common frames omitted
+
+2022-10-05 11:27:10.928  INFO 9452 --- [main] c.c.remittance.RemittanceApplication     : Starting RemittanceApplication using Java 11.0.16 on bsk-n041022-10 with PID 9452 (C:\Users\Public\Projects\remittance\target\classes started by az_madumarov in C:\Users\Public\Projects\remittance)
+2022-10-05 11:27:10.928  INFO 9452 --- [main] c.c.remittance.RemittanceApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-10-05 11:27:11.682  INFO 9452 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-05 11:27:11.729  INFO 9452 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 5 JPA repository interfaces.
+2022-10-05 11:27:12.129  INFO 9452 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-10-05 11:27:12.145  INFO 9452 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-05 11:27:12.145  INFO 9452 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-05 11:27:12.239  INFO 9452 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-05 11:27:12.239  INFO 9452 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1263 ms
+2022-10-05 11:27:12.441  INFO 9452 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-05 11:27:12.472  INFO 9452 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-05 11:27:12.582  INFO 9452 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-05 11:27:12.645  INFO 9452 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-10-05 11:27:12.776  INFO 9452 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-10-05 11:27:12.791  INFO 9452 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-10-05 11:27:13.393  INFO 9452 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-05 11:27:13.393  INFO 9452 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-05 11:27:13.874  INFO 9452 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3a2a56f6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a8da5c5, org.springframework.security.web.context.SecurityContextPersistenceFilter@7698a3d9, org.springframework.security.web.header.HeaderWriterFilter@337fb1a5, org.springframework.security.web.authentication.logout.LogoutFilter@43e86c0c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3369e2ce, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@39dce2df, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@57bfca3a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@160e45c8, org.springframework.security.web.session.SessionManagementFilter@6bdad3bb, org.springframework.security.web.access.ExceptionTranslationFilter@29a50a11, org.springframework.security.web.access.intercept.AuthorizationFilter@15a8bbe5]
+2022-10-05 11:27:14.409  INFO 9452 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-10-05 11:27:14.450  INFO 9452 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-05 11:27:14.466  INFO 9452 --- [main] c.c.remittance.RemittanceApplication     : Started RemittanceApplication in 4.033 seconds (JVM running for 4.954)
+2022-10-05 11:27:14.593  INFO 9452 --- [RMI TCP Connection(1)-10.100.78.20] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-05 11:27:14.593  INFO 9452 --- [RMI TCP Connection(1)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-05 11:27:14.593  INFO 9452 --- [RMI TCP Connection(1)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-10-05 11:39:33.046  INFO 10548 --- [main] c.c.remittance.RemittanceApplication     : Starting RemittanceApplication using Java 11.0.16 on bsk-n041022-10 with PID 10548 (C:\Users\Public\Projects\remittance\target\classes started by az_madumarov in C:\Users\Public\Projects\remittance)
+2022-10-05 11:39:33.046  INFO 10548 --- [main] c.c.remittance.RemittanceApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-10-05 11:39:33.785  INFO 10548 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-05 11:39:33.831  INFO 10548 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 5 JPA repository interfaces.
+2022-10-05 11:39:34.206  INFO 10548 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-10-05 11:39:34.206  INFO 10548 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-05 11:39:34.206  INFO 10548 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-05 11:39:34.306  INFO 10548 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-05 11:39:34.306  INFO 10548 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1213 ms
+2022-10-05 11:39:34.511  INFO 10548 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-05 11:39:34.543  INFO 10548 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-05 11:39:34.636  INFO 10548 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-05 11:39:34.714  INFO 10548 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-10-05 11:39:34.831  INFO 10548 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-10-05 11:39:34.847  INFO 10548 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-10-05 11:39:35.358  INFO 10548 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-05 11:39:35.358  INFO 10548 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-05 11:39:35.601  WARN 10548 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authController' defined in file [C:\Users\Public\Projects\remittance\target\classes\com\company\remittance\controllers\AuthController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authServiceImpl' defined in file [C:\Users\Public\Projects\remittance\target\classes\com\company\remittance\services\impl\AuthServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.security.authentication.AuthenticationManager' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2022-10-05 11:39:35.601  INFO 10548 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-05 11:39:35.601  INFO 10548 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-10-05 11:39:35.622  INFO 10548 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-10-05 11:39:35.625  INFO 10548 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-10-05 11:39:35.632  INFO 10548 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-10-05 11:39:35.648 ERROR 10548 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in com.company.remittance.services.impl.AuthServiceImpl required a bean of type 'org.springframework.security.authentication.AuthenticationManager' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.authentication.AuthenticationManager' in your configuration.
+
+2022-10-05 11:40:08.698  INFO 15132 --- [main] c.c.remittance.RemittanceApplication     : Starting RemittanceApplication using Java 11.0.16 on bsk-n041022-10 with PID 15132 (C:\Users\Public\Projects\remittance\target\classes started by az_madumarov in C:\Users\Public\Projects\remittance)
+2022-10-05 11:40:08.713  INFO 15132 --- [main] c.c.remittance.RemittanceApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-10-05 11:40:09.405  INFO 15132 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-05 11:40:09.452  INFO 15132 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 5 JPA repository interfaces.
+2022-10-05 11:40:09.827  INFO 15132 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-10-05 11:40:09.842  INFO 15132 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-05 11:40:09.842  INFO 15132 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-05 11:40:09.936  INFO 15132 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-05 11:40:09.936  INFO 15132 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1191 ms
+2022-10-05 11:40:10.141  INFO 15132 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-05 11:40:10.172  INFO 15132 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-05 11:40:10.266  INFO 15132 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-05 11:40:10.328  INFO 15132 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-10-05 11:40:10.461  INFO 15132 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-10-05 11:40:10.477  INFO 15132 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-10-05 11:40:11.042  INFO 15132 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-05 11:40:11.042  INFO 15132 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-05 11:40:11.496  INFO 15132 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/'] with [org.springframework.security.web.session.DisableEncodeUrlFilter@282aea3c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@54a5799f, org.springframework.security.web.context.SecurityContextPersistenceFilter@73eae5f, org.springframework.security.web.header.HeaderWriterFilter@3809f65d, org.springframework.security.web.authentication.logout.LogoutFilter@15a8bbe5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7698a3d9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5598dff2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@162e29a1, org.springframework.security.web.session.SessionManagementFilter@337fb1a5, org.springframework.security.web.access.ExceptionTranslationFilter@2f4fc18, org.springframework.security.web.access.intercept.AuthorizationFilter@17e8caf2]
+2022-10-05 11:40:11.952  INFO 15132 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-10-05 11:40:11.999  INFO 15132 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-05 11:40:12.014  INFO 15132 --- [main] c.c.remittance.RemittanceApplication     : Started RemittanceApplication in 3.754 seconds (JVM running for 4.574)
+2022-10-05 11:40:12.665  INFO 15132 --- [RMI TCP Connection(2)-10.100.78.20] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-05 11:40:12.680  INFO 15132 --- [RMI TCP Connection(2)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-05 11:40:12.680  INFO 15132 --- [RMI TCP Connection(2)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-10-05 11:40:20.733  WARN 15132 --- [http-nio-8080-exec-1] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [209] milliseconds.
+2022-10-05 13:11:07.388  WARN 15132 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=38m25s941ms34µs).
+2022-10-05 13:19:56.116  INFO 3780 --- [main] c.c.remittance.RemittanceApplication     : Starting RemittanceApplication using Java 11.0.16 on bsk-n041022-10 with PID 3780 (C:\Users\Public\Projects\remittance\target\classes started by az_madumarov in C:\Users\Public\Projects\remittance)
+2022-10-05 13:19:56.121  INFO 3780 --- [main] c.c.remittance.RemittanceApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-10-05 13:19:56.859  INFO 3780 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-05 13:19:56.911  INFO 3780 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45 ms. Found 5 JPA repository interfaces.
+2022-10-05 13:19:57.306  INFO 3780 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-10-05 13:19:57.314  INFO 3780 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-05 13:19:57.314  INFO 3780 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-05 13:19:57.422  INFO 3780 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-05 13:19:57.422  INFO 3780 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1262 ms
+2022-10-05 13:19:57.630  INFO 3780 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-05 13:19:57.663  INFO 3780 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-05 13:19:57.763  INFO 3780 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-05 13:19:57.833  INFO 3780 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-10-05 13:19:57.963  INFO 3780 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-10-05 13:19:57.984  INFO 3780 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-10-05 13:19:58.543  INFO 3780 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-05 13:19:58.551  INFO 3780 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-05 13:19:58.912  INFO 3780 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3a2a56f6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a8da5c5, org.springframework.security.web.context.SecurityContextPersistenceFilter@7698a3d9, org.springframework.security.web.header.HeaderWriterFilter@337fb1a5, org.springframework.security.web.authentication.logout.LogoutFilter@43e86c0c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3369e2ce, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@39dce2df, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@57bfca3a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@160e45c8, org.springframework.security.web.session.SessionManagementFilter@6bdad3bb, org.springframework.security.web.access.ExceptionTranslationFilter@29a50a11, org.springframework.security.web.access.intercept.AuthorizationFilter@15a8bbe5]
+2022-10-05 13:19:59.408  INFO 3780 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-10-05 13:19:59.451  INFO 3780 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-05 13:19:59.469  INFO 3780 --- [main] c.c.remittance.RemittanceApplication     : Started RemittanceApplication in 3.79 seconds (JVM running for 4.678)
+2022-10-05 13:19:59.889  INFO 3780 --- [RMI TCP Connection(1)-10.100.78.20] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-05 13:19:59.890  INFO 3780 --- [RMI TCP Connection(1)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-05 13:19:59.891  INFO 3780 --- [RMI TCP Connection(1)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-10-05 13:20:17.110  WARN 3780 --- [http-nio-8080-exec-2] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [265] milliseconds.
+2022-10-05 13:20:37.992  INFO 12772 --- [main] c.c.remittance.RemittanceApplication     : Starting RemittanceApplication using Java 11.0.16 on bsk-n041022-10 with PID 12772 (C:\Users\Public\Projects\remittance\target\classes started by az_madumarov in C:\Users\Public\Projects\remittance)
+2022-10-05 13:20:37.999  INFO 12772 --- [main] c.c.remittance.RemittanceApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-10-05 13:20:38.707  INFO 12772 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-05 13:20:38.756  INFO 12772 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 5 JPA repository interfaces.
+2022-10-05 13:20:39.123  INFO 12772 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-10-05 13:20:39.129  INFO 12772 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-05 13:20:39.129  INFO 12772 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-05 13:20:39.224  INFO 12772 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-05 13:20:39.225  INFO 12772 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1186 ms
+2022-10-05 13:20:39.419  INFO 12772 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-05 13:20:39.450  INFO 12772 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-05 13:20:39.543  INFO 12772 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-05 13:20:39.607  INFO 12772 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-10-05 13:20:39.725  INFO 12772 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-10-05 13:20:39.740  INFO 12772 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-10-05 13:20:40.275  INFO 12772 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-05 13:20:40.282  INFO 12772 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-05 13:20:40.598  INFO 12772 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4271b748, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@56d6e2e1, org.springframework.security.web.context.SecurityContextPersistenceFilter@279e8bc0, org.springframework.security.web.header.HeaderWriterFilter@717b0d81, org.springframework.security.web.authentication.logout.LogoutFilter@174f0d06, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2d36add1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@35277c6c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7a053795, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4e9695cf, org.springframework.security.web.session.SessionManagementFilter@4d793390, org.springframework.security.web.access.ExceptionTranslationFilter@7187078a, org.springframework.security.web.access.intercept.AuthorizationFilter@2987b699]
+2022-10-05 13:20:41.058  INFO 12772 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-10-05 13:20:41.098  INFO 12772 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-05 13:20:41.113  INFO 12772 --- [main] c.c.remittance.RemittanceApplication     : Started RemittanceApplication in 3.552 seconds (JVM running for 4.489)
+2022-10-05 13:20:41.602  INFO 12772 --- [RMI TCP Connection(2)-10.100.78.20] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-05 13:20:41.604  INFO 12772 --- [RMI TCP Connection(2)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-05 13:20:41.605  INFO 12772 --- [RMI TCP Connection(2)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-10-05 13:20:57.689  WARN 12772 --- [http-nio-8080-exec-3] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [236] milliseconds.
+2022-10-05 13:35:57.088  INFO 3484 --- [main] c.c.remittance.RemittanceApplication     : Starting RemittanceApplication using Java 11.0.16 on bsk-n041022-10 with PID 3484 (C:\Users\Public\Projects\remittance\target\classes started by az_madumarov in C:\Users\Public\Projects\remittance)
+2022-10-05 13:35:57.091  INFO 3484 --- [main] c.c.remittance.RemittanceApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-10-05 13:35:57.966  INFO 3484 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-05 13:35:58.026  INFO 3484 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 5 JPA repository interfaces.
+2022-10-05 13:35:58.477  INFO 3484 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-10-05 13:35:58.484  INFO 3484 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-05 13:35:58.484  INFO 3484 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-05 13:35:58.595  INFO 3484 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-05 13:35:58.596  INFO 3484 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1458 ms
+2022-10-05 13:35:58.821  INFO 3484 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-05 13:35:58.850  INFO 3484 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-05 13:35:58.972  INFO 3484 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-05 13:35:59.063  INFO 3484 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-10-05 13:35:59.204  INFO 3484 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-10-05 13:35:59.219  INFO 3484 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-10-05 13:35:59.850  INFO 3484 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-05 13:35:59.858  INFO 3484 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-05 13:36:00.275  INFO 3484 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1cc81ea1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5cf1bbd3, org.springframework.security.web.context.SecurityContextPersistenceFilter@79c2bc34, org.springframework.security.web.header.HeaderWriterFilter@43e86c0c, org.springframework.security.web.authentication.logout.LogoutFilter@4bc9451b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@206b959c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@15a8bbe5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6a8da5c5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@204a02a4, org.springframework.security.web.session.SessionManagementFilter@6d4c7248, org.springframework.security.web.access.ExceptionTranslationFilter@75ef1392, org.springframework.security.web.access.intercept.AuthorizationFilter@63846fa4]
+2022-10-05 13:36:00.846  INFO 3484 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-10-05 13:36:00.901  INFO 3484 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-05 13:36:00.925  INFO 3484 --- [main] c.c.remittance.RemittanceApplication     : Started RemittanceApplication in 4.301 seconds (JVM running for 5.181)
+2022-10-05 13:36:01.689  INFO 3484 --- [RMI TCP Connection(3)-10.100.78.20] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-05 13:36:01.691  INFO 3484 --- [RMI TCP Connection(3)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-05 13:36:01.693  INFO 3484 --- [RMI TCP Connection(3)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-10-05 13:57:29.686  INFO 12412 --- [main] c.c.remittance.RemittanceApplication     : Starting RemittanceApplication using Java 11.0.16 on bsk-n041022-10 with PID 12412 (C:\Users\Public\Projects\remittance\target\classes started by az_madumarov in C:\Users\Public\Projects\remittance)
+2022-10-05 13:57:29.690  INFO 12412 --- [main] c.c.remittance.RemittanceApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-10-05 13:57:30.424  INFO 12412 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-05 13:57:30.476  INFO 12412 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 5 JPA repository interfaces.
+2022-10-05 13:57:30.886  INFO 12412 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-10-05 13:57:30.892  INFO 12412 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-05 13:57:30.893  INFO 12412 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-05 13:57:30.984  INFO 12412 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-05 13:57:30.984  INFO 12412 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1252 ms
+2022-10-05 13:57:31.189  INFO 12412 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-05 13:57:31.228  INFO 12412 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-05 13:57:31.329  INFO 12412 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-05 13:57:31.395  INFO 12412 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-10-05 13:57:31.520  INFO 12412 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-10-05 13:57:31.554  INFO 12412 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-10-05 13:57:32.101  INFO 12412 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-05 13:57:32.109  INFO 12412 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-05 13:57:32.439  INFO 12412 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@74a3160d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@77978658, org.springframework.security.web.context.SecurityContextPersistenceFilter@75ef1392, org.springframework.security.web.header.HeaderWriterFilter@59aba3c3, org.springframework.security.web.authentication.logout.LogoutFilter@162e29a1, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2a2b3aff, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@56d6e2e1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6d4c7248, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@498b697, org.springframework.security.web.session.SessionManagementFilter@236a3e4, org.springframework.security.web.access.ExceptionTranslationFilter@174f0d06, org.springframework.security.web.access.intercept.AuthorizationFilter@647ce968]
+2022-10-05 13:57:32.918  INFO 12412 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-10-05 13:57:32.962  INFO 12412 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-05 13:57:32.977  INFO 12412 --- [main] c.c.remittance.RemittanceApplication     : Started RemittanceApplication in 3.774 seconds (JVM running for 4.648)
+2022-10-05 13:57:33.511  INFO 12412 --- [RMI TCP Connection(2)-10.100.78.20] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-05 13:57:33.514  INFO 12412 --- [RMI TCP Connection(2)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-05 13:57:33.516  INFO 12412 --- [RMI TCP Connection(2)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-10-05 13:57:45.562  WARN 12412 --- [http-nio-8080-exec-1] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [373] milliseconds.
+2022-10-05 13:58:33.938  INFO 16360 --- [main] c.c.remittance.RemittanceApplication     : Starting RemittanceApplication using Java 11.0.16 on bsk-n041022-10 with PID 16360 (C:\Users\Public\Projects\remittance\target\classes started by az_madumarov in C:\Users\Public\Projects\remittance)
+2022-10-05 13:58:33.945  INFO 16360 --- [main] c.c.remittance.RemittanceApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-10-05 13:58:34.723  INFO 16360 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-05 13:58:34.777  INFO 16360 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 5 JPA repository interfaces.
+2022-10-05 13:58:35.189  INFO 16360 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-10-05 13:58:35.196  INFO 16360 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-05 13:58:35.196  INFO 16360 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-05 13:58:35.296  INFO 16360 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-05 13:58:35.297  INFO 16360 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1309 ms
+2022-10-05 13:58:35.517  INFO 16360 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-05 13:58:35.549  INFO 16360 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-05 13:58:35.643  INFO 16360 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-05 13:58:35.706  INFO 16360 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-10-05 13:58:35.834  INFO 16360 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-10-05 13:58:35.848  INFO 16360 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-10-05 13:58:36.394  INFO 16360 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-05 13:58:36.401  INFO 16360 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-05 13:58:36.722  INFO 16360 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@63846fa4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@206b959c, org.springframework.security.web.context.SecurityContextPersistenceFilter@6d4c7248, org.springframework.security.web.header.HeaderWriterFilter@4271b748, org.springframework.security.web.authentication.logout.LogoutFilter@6f2a1ff0, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6987b74e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@17063c32, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3369e2ce, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@74026b18, org.springframework.security.web.session.SessionManagementFilter@4e9695cf, org.springframework.security.web.access.ExceptionTranslationFilter@236a3e4, org.springframework.security.web.access.intercept.AuthorizationFilter@5f8da82]
+2022-10-05 13:58:37.187  INFO 16360 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-10-05 13:58:37.224  INFO 16360 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-05 13:58:37.242  INFO 16360 --- [main] c.c.remittance.RemittanceApplication     : Started RemittanceApplication in 3.749 seconds (JVM running for 4.714)
+2022-10-05 13:58:37.805  INFO 16360 --- [RMI TCP Connection(2)-10.100.78.20] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-05 13:58:37.808  INFO 16360 --- [RMI TCP Connection(2)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-05 13:58:37.810  INFO 16360 --- [RMI TCP Connection(2)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-10-05 13:58:50.605  WARN 16360 --- [http-nio-8080-exec-1] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [333] milliseconds.
+2022-10-05 15:26:28.589  INFO 14044 --- [main] c.c.remittance.RemittanceApplication     : Starting RemittanceApplication using Java 11.0.16 on bsk-n041022-10 with PID 14044 (C:\Users\Public\Projects\remittance\target\classes started by az_madumarov in C:\Users\Public\Projects\remittance)
+2022-10-05 15:26:28.592  INFO 14044 --- [main] c.c.remittance.RemittanceApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-10-05 15:26:29.373  INFO 14044 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-05 15:26:29.425  INFO 14044 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 5 JPA repository interfaces.
+2022-10-05 15:26:29.828  INFO 14044 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-10-05 15:26:29.835  INFO 14044 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-05 15:26:29.836  INFO 14044 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-05 15:26:29.945  INFO 14044 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-05 15:26:29.945  INFO 14044 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1313 ms
+2022-10-05 15:26:30.187  INFO 14044 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-05 15:26:30.226  INFO 14044 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-05 15:26:30.356  INFO 14044 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-05 15:26:30.452  INFO 14044 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-10-05 15:26:30.575  INFO 14044 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-10-05 15:26:30.592  INFO 14044 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-10-05 15:26:31.175  WARN 14044 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-10-05 15:26:31.176  WARN 14044 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk_h84pd2rtr12isnifnj655rkra" of relation "currency" does not exist, skipping
+2022-10-05 15:26:31.180  WARN 14044 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-10-05 15:26:31.180  WARN 14044 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk_ou8q9939fa4k88wjh17qwcmre" of relation "currency" does not exist, skipping
+2022-10-05 15:26:31.184  WARN 14044 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-10-05 15:26:31.185  WARN 14044 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk_r6husltxdp17crwdk415j7taw" of relation "remittance" does not exist, skipping
+2022-10-05 15:26:31.189  WARN 14044 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-10-05 15:26:31.189  WARN 14044 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk_rausl0ctj9serlpp463b7ku92" of relation "users" does not exist, skipping
+2022-10-05 15:26:31.194  WARN 14044 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-10-05 15:26:31.194  WARN 14044 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk_r43af9ap4edm43mmtq01oddj6" of relation "users" does not exist, skipping
+2022-10-05 15:26:31.204  INFO 14044 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-05 15:26:31.210  INFO 14044 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-05 15:26:31.521  WARN 14044 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'remittanceController' defined in file [C:\Users\Public\Projects\remittance\target\classes\com\company\remittance\controllers\RemittanceController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.company.remittance.services.RemittanceService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2022-10-05 15:26:31.522  INFO 14044 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-05 15:26:31.524  INFO 14044 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-10-05 15:26:31.538  INFO 14044 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-10-05 15:26:31.541  INFO 14044 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-10-05 15:26:31.557  INFO 14044 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-10-05 15:26:31.573 ERROR 14044 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.company.remittance.controllers.RemittanceController required a bean of type 'com.company.remittance.services.RemittanceService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.company.remittance.services.RemittanceService' in your configuration.
+
+2022-10-05 15:27:40.624  INFO 15608 --- [main] c.c.remittance.RemittanceApplication     : Starting RemittanceApplication using Java 11.0.16 on bsk-n041022-10 with PID 15608 (C:\Users\Public\Projects\remittance\target\classes started by az_madumarov in C:\Users\Public\Projects\remittance)
+2022-10-05 15:27:40.629  INFO 15608 --- [main] c.c.remittance.RemittanceApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-10-05 15:27:41.403  INFO 15608 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-05 15:27:41.462  INFO 15608 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 5 JPA repository interfaces.
+2022-10-05 15:27:41.884  INFO 15608 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-10-05 15:27:41.891  INFO 15608 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-05 15:27:41.891  INFO 15608 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-05 15:27:41.992  INFO 15608 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-05 15:27:41.993  INFO 15608 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1314 ms
+2022-10-05 15:27:42.215  INFO 15608 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-05 15:27:42.248  INFO 15608 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-05 15:27:42.346  INFO 15608 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-05 15:27:42.412  INFO 15608 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-10-05 15:27:42.541  INFO 15608 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-10-05 15:27:42.556  INFO 15608 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-10-05 15:27:43.117  INFO 15608 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-05 15:27:43.128  INFO 15608 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-05 15:27:43.464  INFO 15608 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2cc9a948, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6f2a1ff0, org.springframework.security.web.context.SecurityContextPersistenceFilter@59aba3c3, org.springframework.security.web.header.HeaderWriterFilter@5392aa2b, org.springframework.security.web.authentication.logout.LogoutFilter@37196d53, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@542beecb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@236a3e4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4271b748, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@647ce968, org.springframework.security.web.session.SessionManagementFilter@5cc87de4, org.springframework.security.web.access.ExceptionTranslationFilter@237d0625, org.springframework.security.web.access.intercept.AuthorizationFilter@2b3d03b2]
+2022-10-05 15:27:43.966  INFO 15608 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-10-05 15:27:44.009  INFO 15608 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-05 15:27:44.024  INFO 15608 --- [main] c.c.remittance.RemittanceApplication     : Started RemittanceApplication in 3.847 seconds (JVM running for 4.703)
+2022-10-05 15:27:44.346  INFO 15608 --- [RMI TCP Connection(1)-10.100.78.20] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-05 15:27:44.348  INFO 15608 --- [RMI TCP Connection(1)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-05 15:27:44.350  INFO 15608 --- [RMI TCP Connection(1)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-10-05 15:32:20.447  INFO 14956 --- [main] c.c.remittance.RemittanceApplication     : Starting RemittanceApplication using Java 11.0.16 on bsk-n041022-10 with PID 14956 (C:\Users\Public\Projects\remittance\target\classes started by az_madumarov in C:\Users\Public\Projects\remittance)
+2022-10-05 15:32:20.453  INFO 14956 --- [main] c.c.remittance.RemittanceApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-10-05 15:32:21.211  INFO 14956 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-05 15:32:21.265  INFO 14956 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 5 JPA repository interfaces.
+2022-10-05 15:32:21.686  INFO 14956 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-10-05 15:32:21.693  INFO 14956 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-05 15:32:21.693  INFO 14956 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-05 15:32:21.799  INFO 14956 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-05 15:32:21.799  INFO 14956 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1304 ms
+2022-10-05 15:32:22.007  INFO 14956 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-05 15:32:22.037  INFO 14956 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-05 15:32:22.138  INFO 14956 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-05 15:32:22.209  INFO 14956 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-10-05 15:32:22.340  INFO 14956 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-10-05 15:32:22.355  INFO 14956 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-10-05 15:32:22.892  WARN 14956 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-10-05 15:32:22.892  WARN 14956 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk_h84pd2rtr12isnifnj655rkra" of relation "currency" does not exist, skipping
+2022-10-05 15:32:22.896  WARN 14956 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-10-05 15:32:22.896  WARN 14956 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk_ou8q9939fa4k88wjh17qwcmre" of relation "currency" does not exist, skipping
+2022-10-05 15:32:22.899  WARN 14956 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-10-05 15:32:22.900  WARN 14956 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk_r6husltxdp17crwdk415j7taw" of relation "remittance" does not exist, skipping
+2022-10-05 15:32:22.903  WARN 14956 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-10-05 15:32:22.903  WARN 14956 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk_rausl0ctj9serlpp463b7ku92" of relation "users" does not exist, skipping
+2022-10-05 15:32:22.906  WARN 14956 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-10-05 15:32:22.906  WARN 14956 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk_r43af9ap4edm43mmtq01oddj6" of relation "users" does not exist, skipping
+2022-10-05 15:32:22.916  INFO 14956 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-05 15:32:22.922  INFO 14956 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-05 15:32:23.266  INFO 14956 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@15a8bbe5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3369e2ce, org.springframework.security.web.context.SecurityContextPersistenceFilter@6bdad3bb, org.springframework.security.web.header.HeaderWriterFilter@74cff17c, org.springframework.security.web.authentication.logout.LogoutFilter@4271b748, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@79c2bc34, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4902c584, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@662d3e85, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5f26cb8b, org.springframework.security.web.session.SessionManagementFilter@328bc067, org.springframework.security.web.access.ExceptionTranslationFilter@7a364e1c, org.springframework.security.web.access.intercept.AuthorizationFilter@17063c32]
+2022-10-05 15:32:23.760  INFO 14956 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-10-05 15:32:23.800  INFO 14956 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-05 15:32:23.815  INFO 14956 --- [main] c.c.remittance.RemittanceApplication     : Started RemittanceApplication in 3.82 seconds (JVM running for 4.695)
+2022-10-05 15:32:24.158  INFO 14956 --- [RMI TCP Connection(2)-10.100.78.20] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-05 15:32:24.160  INFO 14956 --- [RMI TCP Connection(2)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-05 15:32:24.162  INFO 14956 --- [RMI TCP Connection(2)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-10-05 15:35:17.426  INFO 14080 --- [main] c.c.remittance.RemittanceApplication     : Starting RemittanceApplication using Java 11.0.16 on bsk-n041022-10 with PID 14080 (C:\Users\Public\Projects\remittance\target\classes started by az_madumarov in C:\Users\Public\Projects\remittance)
+2022-10-05 15:35:17.432  INFO 14080 --- [main] c.c.remittance.RemittanceApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-10-05 15:35:18.205  INFO 14080 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-05 15:35:18.258  INFO 14080 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 5 JPA repository interfaces.
+2022-10-05 15:35:18.652  INFO 14080 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-10-05 15:35:18.661  INFO 14080 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-05 15:35:18.662  INFO 14080 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-05 15:35:18.763  INFO 14080 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-05 15:35:18.763  INFO 14080 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1281 ms
+2022-10-05 15:35:18.986  INFO 14080 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-05 15:35:19.017  INFO 14080 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-05 15:35:19.112  INFO 14080 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-05 15:35:19.177  INFO 14080 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-10-05 15:35:19.307  INFO 14080 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-10-05 15:35:19.322  INFO 14080 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-10-05 15:35:19.904  INFO 14080 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-05 15:35:19.911  INFO 14080 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-05 15:35:20.266  INFO 14080 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@237d0625, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1a5a4f8, org.springframework.security.web.context.SecurityContextPersistenceFilter@3d99d327, org.springframework.security.web.header.HeaderWriterFilter@571e2f15, org.springframework.security.web.authentication.logout.LogoutFilter@4b62f1ba, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1a390b8c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7f31937b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1d38cdde, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5392aa2b, org.springframework.security.web.session.SessionManagementFilter@51d9fd30, org.springframework.security.web.access.ExceptionTranslationFilter@2a4bd699, org.springframework.security.web.access.intercept.AuthorizationFilter@4b9d2cee]
+2022-10-05 15:35:20.771  INFO 14080 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-10-05 15:35:20.817  INFO 14080 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-05 15:35:20.833  INFO 14080 --- [main] c.c.remittance.RemittanceApplication     : Started RemittanceApplication in 3.85 seconds (JVM running for 4.872)
+2022-10-05 15:35:21.130  INFO 14080 --- [RMI TCP Connection(2)-10.100.78.20] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-05 15:35:21.132  INFO 14080 --- [RMI TCP Connection(2)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-05 15:35:21.133  INFO 14080 --- [RMI TCP Connection(2)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-10-05 15:39:36.845  INFO 12180 --- [main] c.c.remittance.RemittanceApplication     : Starting RemittanceApplication using Java 11.0.16 on bsk-n041022-10 with PID 12180 (C:\Users\Public\Projects\remittance\target\classes started by az_madumarov in C:\Users\Public\Projects\remittance)
+2022-10-05 15:39:36.849  INFO 12180 --- [main] c.c.remittance.RemittanceApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-10-05 15:39:37.649  INFO 12180 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-05 15:39:37.701  INFO 12180 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 5 JPA repository interfaces.
+2022-10-05 15:39:38.092  INFO 12180 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-10-05 15:39:38.098  INFO 12180 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-05 15:39:38.098  INFO 12180 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-05 15:39:38.200  INFO 12180 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-05 15:39:38.200  INFO 12180 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1311 ms
+2022-10-05 15:39:38.408  INFO 12180 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-05 15:39:38.438  INFO 12180 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-05 15:39:38.540  INFO 12180 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-05 15:39:38.609  INFO 12180 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-10-05 15:39:38.730  INFO 12180 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-10-05 15:39:38.747  INFO 12180 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-10-05 15:39:39.294  INFO 12180 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-05 15:39:39.301  INFO 12180 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-05 15:39:39.617  INFO 12180 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7488c183, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@66779435, org.springframework.security.web.context.SecurityContextPersistenceFilter@57bfca3a, org.springframework.security.web.header.HeaderWriterFilter@4b62f1ba, org.springframework.security.web.authentication.logout.LogoutFilter@77925f76, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@17e8caf2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4b9d2cee, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1a5a4f8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@37196d53, org.springframework.security.web.session.SessionManagementFilter@662d3e85, org.springframework.security.web.access.ExceptionTranslationFilter@4902c584, org.springframework.security.web.access.intercept.AuthorizationFilter@7f9dbe11]
+2022-10-05 15:39:40.114  INFO 12180 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-10-05 15:39:40.158  INFO 12180 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-05 15:39:40.173  INFO 12180 --- [main] c.c.remittance.RemittanceApplication     : Started RemittanceApplication in 3.786 seconds (JVM running for 4.737)
+2022-10-05 15:39:40.557  INFO 12180 --- [RMI TCP Connection(1)-10.100.78.20] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-05 15:39:40.559  INFO 12180 --- [RMI TCP Connection(1)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-05 15:39:40.561  INFO 12180 --- [RMI TCP Connection(1)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-10-05 15:39:47.555  WARN 12180 --- [http-nio-8080-exec-1] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [209] milliseconds.
+2022-10-05 15:39:47.598  WARN 12180 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-10-05 15:39:47.864  WARN 12180 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-10-05 15:41:05.968  INFO 16156 --- [main] c.c.remittance.RemittanceApplication     : Starting RemittanceApplication using Java 11.0.16 on bsk-n041022-10 with PID 16156 (C:\Users\Public\Projects\remittance\target\classes started by az_madumarov in C:\Users\Public\Projects\remittance)
+2022-10-05 15:41:05.971  INFO 16156 --- [main] c.c.remittance.RemittanceApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-10-05 15:41:06.716  INFO 16156 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-05 15:41:06.773  INFO 16156 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 5 JPA repository interfaces.
+2022-10-05 15:41:07.180  INFO 16156 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-10-05 15:41:07.186  INFO 16156 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-05 15:41:07.186  INFO 16156 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-05 15:41:07.277  INFO 16156 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-05 15:41:07.277  INFO 16156 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1266 ms
+2022-10-05 15:41:07.499  INFO 16156 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-05 15:41:07.530  INFO 16156 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-05 15:41:07.627  INFO 16156 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-05 15:41:07.693  INFO 16156 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-10-05 15:41:07.816  INFO 16156 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-10-05 15:41:07.856  INFO 16156 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-10-05 15:41:08.431  INFO 16156 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-05 15:41:08.439  INFO 16156 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-05 15:41:08.789  INFO 16156 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4d793390, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3a359f7c, org.springframework.security.web.context.SecurityContextPersistenceFilter@5e777b0, org.springframework.security.web.header.HeaderWriterFilter@3c4e23be, org.springframework.security.web.authentication.logout.LogoutFilter@2e7e4480, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@717b0d81, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@17fa14a3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@66859ea9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@138b9abe, org.springframework.security.web.session.SessionManagementFilter@1ec4fdcf, org.springframework.security.web.access.ExceptionTranslationFilter@5b7b0ada, org.springframework.security.web.access.intercept.AuthorizationFilter@3809f65d]
+2022-10-05 15:41:09.262  INFO 16156 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-10-05 15:41:09.307  INFO 16156 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-05 15:41:09.323  INFO 16156 --- [main] c.c.remittance.RemittanceApplication     : Started RemittanceApplication in 3.853 seconds (JVM running for 4.769)
+2022-10-05 15:41:09.936  INFO 16156 --- [RMI TCP Connection(2)-10.100.78.20] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-05 15:41:09.938  INFO 16156 --- [RMI TCP Connection(2)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-05 15:41:09.940  INFO 16156 --- [RMI TCP Connection(2)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-10-05 15:41:24.484  WARN 16156 --- [http-nio-8080-exec-2] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [364] milliseconds.
+2022-10-05 16:01:47.142  WARN 16156 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m8s923ms247µs500ns).
+2022-10-05 16:05:43.775  INFO 16328 --- [main] c.c.remittance.RemittanceApplication     : Starting RemittanceApplication using Java 11.0.16 on bsk-n041022-10 with PID 16328 (C:\Users\Public\Projects\remittance\target\classes started by az_madumarov in C:\Users\Public\Projects\remittance)
+2022-10-05 16:05:43.778  INFO 16328 --- [main] c.c.remittance.RemittanceApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-10-05 16:05:44.584  INFO 16328 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-05 16:05:44.644  INFO 16328 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 5 JPA repository interfaces.
+2022-10-05 16:05:45.097  INFO 16328 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-10-05 16:05:45.104  INFO 16328 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-05 16:05:45.104  INFO 16328 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-05 16:05:45.210  INFO 16328 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-05 16:05:45.211  INFO 16328 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1388 ms
+2022-10-05 16:05:45.446  INFO 16328 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-05 16:05:45.476  INFO 16328 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-05 16:05:45.595  INFO 16328 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-05 16:05:45.675  INFO 16328 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-10-05 16:05:45.811  INFO 16328 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-10-05 16:05:45.830  INFO 16328 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-10-05 16:05:46.437  INFO 16328 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-05 16:05:46.445  INFO 16328 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-05 16:05:46.815  INFO 16328 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@706690e1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3663af34, org.springframework.security.web.context.SecurityContextPersistenceFilter@6e612122, org.springframework.security.web.header.HeaderWriterFilter@3d99d327, org.springframework.security.web.authentication.logout.LogoutFilter@57bfca3a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@174f0d06, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3809f65d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3a359f7c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@59aba3c3, org.springframework.security.web.session.SessionManagementFilter@7f31937b, org.springframework.security.web.access.ExceptionTranslationFilter@2e7e4480, org.springframework.security.web.access.intercept.AuthorizationFilter@5392aa2b]
+2022-10-05 16:05:47.320  INFO 16328 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-10-05 16:05:47.361  INFO 16328 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-05 16:05:47.376  INFO 16328 --- [main] c.c.remittance.RemittanceApplication     : Started RemittanceApplication in 4.133 seconds (JVM running for 5.077)
+2022-10-05 16:05:48.222  INFO 16328 --- [RMI TCP Connection(3)-10.100.78.20] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-05 16:05:48.225  INFO 16328 --- [RMI TCP Connection(3)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-05 16:05:48.227  INFO 16328 --- [RMI TCP Connection(3)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-10-05 16:06:06.891  WARN 16328 --- [http-nio-8080-exec-1] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [237] milliseconds.
+2022-10-05 16:07:21.319  INFO 1456 --- [main] c.c.remittance.RemittanceApplication     : Starting RemittanceApplication using Java 11.0.16 on bsk-n041022-10 with PID 1456 (C:\Users\Public\Projects\remittance\target\classes started by az_madumarov in C:\Users\Public\Projects\remittance)
+2022-10-05 16:07:21.323  INFO 1456 --- [main] c.c.remittance.RemittanceApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-10-05 16:07:22.200  INFO 1456 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-05 16:07:22.262  INFO 1456 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 5 JPA repository interfaces.
+2022-10-05 16:07:22.694  INFO 1456 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-10-05 16:07:22.703  INFO 1456 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-05 16:07:22.704  INFO 1456 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-05 16:07:22.838  INFO 1456 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-05 16:07:22.839  INFO 1456 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1465 ms
+2022-10-05 16:07:23.094  INFO 1456 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-05 16:07:23.123  INFO 1456 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-05 16:07:23.242  INFO 1456 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-05 16:07:23.321  INFO 1456 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-10-05 16:07:23.452  INFO 1456 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-10-05 16:07:23.496  INFO 1456 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-10-05 16:07:24.067  INFO 1456 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-05 16:07:24.074  INFO 1456 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-05 16:07:24.416  INFO 1456 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@160e45c8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7f9dbe11, org.springframework.security.web.context.SecurityContextPersistenceFilter@39dce2df, org.springframework.security.web.header.HeaderWriterFilter@6bdad3bb, org.springframework.security.web.authentication.logout.LogoutFilter@6d4c7248, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3a2a56f6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5598dff2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4b9d2cee, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@17e8caf2, org.springframework.security.web.session.SessionManagementFilter@4902c584, org.springframework.security.web.access.ExceptionTranslationFilter@337fb1a5, org.springframework.security.web.access.intercept.AuthorizationFilter@5f26cb8b]
+2022-10-05 16:07:24.927  INFO 1456 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-10-05 16:07:24.967  INFO 1456 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-05 16:07:24.981  INFO 1456 --- [main] c.c.remittance.RemittanceApplication     : Started RemittanceApplication in 4.159 seconds (JVM running for 5.1)
+2022-10-05 16:07:25.626  INFO 1456 --- [RMI TCP Connection(2)-10.100.78.20] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-05 16:07:25.628  INFO 1456 --- [RMI TCP Connection(2)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-05 16:07:25.630  INFO 1456 --- [RMI TCP Connection(2)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-10-05 16:07:47.719  WARN 1456 --- [http-nio-8080-exec-2] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [414] milliseconds.
+2022-10-05 16:28:28.661  INFO 4536 --- [main] c.c.remittance.RemittanceApplication     : Starting RemittanceApplication using Java 11.0.16 on bsk-n041022-10 with PID 4536 (C:\Users\Public\Projects\remittance\target\classes started by az_madumarov in C:\Users\Public\Projects\remittance)
+2022-10-05 16:28:28.661  INFO 4536 --- [main] c.c.remittance.RemittanceApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-10-05 16:28:29.415  INFO 4536 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-05 16:28:29.463  INFO 4536 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 5 JPA repository interfaces.
+2022-10-05 16:28:29.869  INFO 4536 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-10-05 16:28:29.869  INFO 4536 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-05 16:28:29.869  INFO 4536 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-05 16:28:29.979  INFO 4536 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-05 16:28:29.979  INFO 4536 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1270 ms
+2022-10-05 16:28:30.174  INFO 4536 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-05 16:28:30.205  INFO 4536 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-05 16:28:30.299  INFO 4536 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-05 16:28:30.361  INFO 4536 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-10-05 16:28:30.482  INFO 4536 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-10-05 16:28:30.498  INFO 4536 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-10-05 16:28:31.022  INFO 4536 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-05 16:28:31.030  INFO 4536 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-05 16:28:31.239  WARN 4536 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authController' defined in file [C:\Users\Public\Projects\remittance\target\classes\com\company\remittance\controllers\AuthController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authServiceImpl' defined in file [C:\Users\Public\Projects\remittance\target\classes\com\company\remittance\services\impl\AuthServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.security.authentication.AuthenticationManager' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2022-10-05 16:28:31.239  INFO 4536 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-05 16:28:31.239  INFO 4536 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-10-05 16:28:31.267  INFO 4536 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-10-05 16:28:31.269  INFO 4536 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-10-05 16:28:31.270  INFO 4536 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-10-05 16:28:31.302 ERROR 4536 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in com.company.remittance.services.impl.AuthServiceImpl required a bean of type 'org.springframework.security.authentication.AuthenticationManager' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.authentication.AuthenticationManager' in your configuration.
+
+2022-10-05 16:30:31.679  INFO 11648 --- [main] c.c.remittance.RemittanceApplication     : Starting RemittanceApplication using Java 11.0.16 on bsk-n041022-10 with PID 11648 (C:\Users\Public\Projects\remittance\target\classes started by az_madumarov in C:\Users\Public\Projects\remittance)
+2022-10-05 16:30:31.696  INFO 11648 --- [main] c.c.remittance.RemittanceApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-10-05 16:30:32.438  INFO 11648 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-05 16:30:32.484  INFO 11648 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45 ms. Found 5 JPA repository interfaces.
+2022-10-05 16:30:32.895  INFO 11648 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-10-05 16:30:32.895  INFO 11648 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-05 16:30:32.895  INFO 11648 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-05 16:30:32.988  INFO 11648 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-05 16:30:32.988  INFO 11648 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1242 ms
+2022-10-05 16:30:33.193  INFO 11648 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-05 16:30:33.224  INFO 11648 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-05 16:30:33.318  INFO 11648 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-05 16:30:33.381  INFO 11648 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-10-05 16:30:33.499  INFO 11648 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-10-05 16:30:33.515  INFO 11648 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-10-05 16:30:34.052  INFO 11648 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-05 16:30:34.052  INFO 11648 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-05 16:30:34.365  INFO 11648 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@16745abd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4d793390, org.springframework.security.web.context.SecurityContextPersistenceFilter@3c74d846, org.springframework.security.web.header.HeaderWriterFilter@1d6a0962, org.springframework.security.web.authentication.logout.LogoutFilter@8beb0dd, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3809f65d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5552d10, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4a9412c4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3a359f7c, org.springframework.security.web.session.SessionManagementFilter@515d615, org.springframework.security.web.access.ExceptionTranslationFilter@705d72f0, org.springframework.security.web.access.intercept.AuthorizationFilter@1d38cdde]
+2022-10-05 16:30:34.850  INFO 11648 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-10-05 16:30:34.886  INFO 11648 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-05 16:30:34.902  INFO 11648 --- [main] c.c.remittance.RemittanceApplication     : Started RemittanceApplication in 3.671 seconds (JVM running for 4.713)
+2022-10-05 16:30:35.465  INFO 11648 --- [RMI TCP Connection(2)-10.100.78.20] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-05 16:30:35.465  INFO 11648 --- [RMI TCP Connection(2)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-05 16:30:35.465  INFO 11648 --- [RMI TCP Connection(2)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-10-05 16:30:49.454  WARN 11648 --- [http-nio-8080-exec-1] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [449] milliseconds.
+2022-10-05 16:36:53.014  INFO 16060 --- [main] c.c.remittance.RemittanceApplication     : Starting RemittanceApplication using Java 11.0.16 on bsk-n041022-10 with PID 16060 (C:\Users\Public\Projects\remittance\target\classes started by az_madumarov in C:\Users\Public\Projects\remittance)
+2022-10-05 16:36:53.030  INFO 16060 --- [main] c.c.remittance.RemittanceApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-10-05 16:36:53.783  INFO 16060 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-05 16:36:53.845  INFO 16060 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 5 JPA repository interfaces.
+2022-10-05 16:36:54.238  INFO 16060 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-10-05 16:36:54.238  INFO 16060 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-05 16:36:54.238  INFO 16060 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-05 16:36:54.348  INFO 16060 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-05 16:36:54.348  INFO 16060 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1287 ms
+2022-10-05 16:36:54.551  INFO 16060 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-05 16:36:54.582  INFO 16060 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-05 16:36:54.692  INFO 16060 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-05 16:36:54.754  INFO 16060 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-10-05 16:36:54.885  INFO 16060 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-10-05 16:36:54.901  INFO 16060 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-10-05 16:36:55.454  INFO 16060 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-05 16:36:55.454  INFO 16060 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-05 16:36:55.782  INFO 16060 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@75ef1392, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4271b748, org.springframework.security.web.context.SecurityContextPersistenceFilter@138b9abe, org.springframework.security.web.header.HeaderWriterFilter@3809f65d, org.springframework.security.web.authentication.logout.LogoutFilter@5392aa2b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2987b699, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@23ffc910, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@74cff17c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@56d6e2e1, org.springframework.security.web.session.SessionManagementFilter@16745abd, org.springframework.security.web.access.ExceptionTranslationFilter@6e612122, org.springframework.security.web.access.intercept.AuthorizationFilter@236a3e4]
+2022-10-05 16:36:56.259  INFO 16060 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-10-05 16:36:56.301  INFO 16060 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-05 16:36:56.317  INFO 16060 --- [main] c.c.remittance.RemittanceApplication     : Started RemittanceApplication in 3.772 seconds (JVM running for 4.63)
+2022-10-05 16:36:57.088  INFO 16060 --- [RMI TCP Connection(3)-10.100.78.20] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-05 16:36:57.088  INFO 16060 --- [RMI TCP Connection(3)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-05 16:36:57.088  INFO 16060 --- [RMI TCP Connection(3)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-10-05 16:37:03.872  WARN 16060 --- [http-nio-8080-exec-1] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [189] milliseconds.
+2022-10-05 16:54:48.200  INFO 15316 --- [main] c.c.remittance.RemittanceApplication     : Starting RemittanceApplication using Java 11.0.16 on bsk-n041022-10 with PID 15316 (C:\Users\Public\Projects\remittance\target\classes started by az_madumarov in C:\Users\Public\Projects\remittance)
+2022-10-05 16:54:48.200  INFO 15316 --- [main] c.c.remittance.RemittanceApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-10-05 16:54:48.905  INFO 15316 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-05 16:54:48.952  INFO 15316 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 5 JPA repository interfaces.
+2022-10-05 16:54:49.318  INFO 15316 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-10-05 16:54:49.318  INFO 15316 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-05 16:54:49.318  INFO 15316 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-05 16:54:49.413  INFO 15316 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-05 16:54:49.413  INFO 15316 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1166 ms
+2022-10-05 16:54:49.601  INFO 15316 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-05 16:54:49.633  INFO 15316 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-05 16:54:49.727  INFO 15316 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-05 16:54:49.789  INFO 15316 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-10-05 16:54:49.919  INFO 15316 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-10-05 16:54:49.935  INFO 15316 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-10-05 16:54:50.427  INFO 15316 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-05 16:54:50.427  INFO 15316 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-05 16:54:50.672  WARN 15316 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityConfig' defined in file [C:\Users\Public\Projects\remittance\target\classes\com\company\remittance\config\SecurityConfig.class]: Unsatisfied dependency expressed through constructor parameter 3; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.security.crypto.password.PasswordEncoder' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2022-10-05 16:54:50.672  INFO 15316 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-05 16:54:50.672  INFO 15316 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-10-05 16:54:50.691  INFO 15316 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-10-05 16:54:50.694  INFO 15316 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-10-05 16:54:50.697  INFO 15316 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-10-05 16:54:50.713 ERROR 15316 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 3 of constructor in com.company.remittance.config.SecurityConfig required a bean of type 'org.springframework.security.crypto.password.PasswordEncoder' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.crypto.password.PasswordEncoder' in your configuration.
+
+2022-10-05 16:55:17.016  INFO 10112 --- [main] c.c.remittance.RemittanceApplication     : Starting RemittanceApplication using Java 11.0.16 on bsk-n041022-10 with PID 10112 (C:\Users\Public\Projects\remittance\target\classes started by az_madumarov in C:\Users\Public\Projects\remittance)
+2022-10-05 16:55:17.032  INFO 10112 --- [main] c.c.remittance.RemittanceApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-10-05 16:55:17.692  INFO 10112 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-05 16:55:17.738  INFO 10112 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 5 JPA repository interfaces.
+2022-10-05 16:55:18.102  INFO 10112 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-10-05 16:55:18.102  INFO 10112 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-05 16:55:18.102  INFO 10112 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-05 16:55:18.200  INFO 10112 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-05 16:55:18.200  INFO 10112 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1137 ms
+2022-10-05 16:55:18.397  INFO 10112 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-05 16:55:18.428  INFO 10112 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-05 16:55:18.522  INFO 10112 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-05 16:55:18.601  INFO 10112 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-10-05 16:55:18.719  INFO 10112 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-10-05 16:55:18.735  INFO 10112 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-10-05 16:55:19.242  INFO 10112 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-05 16:55:19.242  INFO 10112 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-05 16:55:19.554  INFO 10112 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@279e8bc0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@23ffc910, org.springframework.security.web.context.SecurityContextPersistenceFilter@219dd935, org.springframework.security.web.header.HeaderWriterFilter@5e777b0, org.springframework.security.web.authentication.logout.LogoutFilter@2f4fc18, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3a359f7c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4a9412c4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@12dc702b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@35277c6c, org.springframework.security.web.session.SessionManagementFilter@17fa14a3, org.springframework.security.web.access.ExceptionTranslationFilter@515d615, org.springframework.security.web.access.intercept.AuthorizationFilter@4d793390]
+2022-10-05 16:55:19.989  INFO 10112 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-10-05 16:55:20.021  INFO 10112 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-05 16:55:20.036  INFO 10112 --- [main] c.c.remittance.RemittanceApplication     : Started RemittanceApplication in 3.452 seconds (JVM running for 4.235)
+2022-10-05 16:55:20.645  INFO 10112 --- [RMI TCP Connection(2)-10.100.78.20] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-05 16:55:20.645  INFO 10112 --- [RMI TCP Connection(2)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-05 16:55:20.645  INFO 10112 --- [RMI TCP Connection(2)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-10-05 16:55:30.727  WARN 10112 --- [http-nio-8080-exec-2] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [162] milliseconds.
+2022-10-05 17:35:03.513  INFO 4732 --- [main] c.c.remittance.RemittanceApplication     : Starting RemittanceApplication using Java 11.0.16 on bsk-n041022-10 with PID 4732 (C:\Users\Public\Projects\remittance\target\classes started by az_madumarov in C:\Users\Public\Projects\remittance)
+2022-10-05 17:35:03.529  INFO 4732 --- [main] c.c.remittance.RemittanceApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-10-05 17:35:04.203  INFO 4732 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-05 17:35:04.250  INFO 4732 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 5 JPA repository interfaces.
+2022-10-05 17:35:04.610  INFO 4732 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-10-05 17:35:04.610  INFO 4732 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-05 17:35:04.610  INFO 4732 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-05 17:35:04.720  INFO 4732 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-05 17:35:04.720  INFO 4732 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1144 ms
+2022-10-05 17:35:04.924  INFO 4732 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-05 17:35:04.955  INFO 4732 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-05 17:35:05.049  INFO 4732 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-05 17:35:05.111  INFO 4732 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-10-05 17:35:05.228  INFO 4732 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-10-05 17:35:05.244  INFO 4732 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-10-05 17:35:05.769  INFO 4732 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-05 17:35:05.769  INFO 4732 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-05 17:35:06.066  INFO 4732 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2bee1c13, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1859b996, org.springframework.security.web.context.SecurityContextPersistenceFilter@25d9298e, org.springframework.security.web.header.HeaderWriterFilter@b889cb6, org.springframework.security.web.authentication.logout.LogoutFilter@4f1a5b93, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@15549dd7, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@488b46da, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@71098fb3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@219db855, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3702d0ed, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@75e92bb7, org.springframework.security.web.session.SessionManagementFilter@54c37dab, org.springframework.security.web.access.ExceptionTranslationFilter@726a5e6a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@25587290]
+2022-10-05 17:35:06.505  INFO 4732 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-10-05 17:35:06.537  INFO 4732 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-05 17:35:06.553  INFO 4732 --- [main] c.c.remittance.RemittanceApplication     : Started RemittanceApplication in 3.485 seconds (JVM running for 4.28)
+2022-10-05 17:35:06.925  INFO 4732 --- [RMI TCP Connection(2)-10.100.78.20] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-05 17:35:06.925  INFO 4732 --- [RMI TCP Connection(2)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-05 17:35:06.925  INFO 4732 --- [RMI TCP Connection(2)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-10-05 17:35:15.931  WARN 4732 --- [http-nio-8080-exec-1] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [224] milliseconds.
+2022-10-05 17:55:53.941  INFO 12524 --- [main] c.c.remittance.RemittanceApplication     : Starting RemittanceApplication using Java 11.0.16 on bsk-n041022-10 with PID 12524 (C:\Users\Public\Projects\remittance\target\classes started by az_madumarov in C:\Users\Public\Projects\remittance)
+2022-10-05 17:55:53.941  INFO 12524 --- [main] c.c.remittance.RemittanceApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-10-05 17:55:54.684  INFO 12524 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-05 17:55:54.747  INFO 12524 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 5 JPA repository interfaces.
+2022-10-05 17:55:55.143  INFO 12524 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-10-05 17:55:55.143  INFO 12524 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-05 17:55:55.143  INFO 12524 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-05 17:55:55.237  INFO 12524 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-05 17:55:55.237  INFO 12524 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1265 ms
+2022-10-05 17:55:55.444  INFO 12524 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-05 17:55:55.476  INFO 12524 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-05 17:55:55.571  INFO 12524 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-05 17:55:55.633  INFO 12524 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-10-05 17:55:55.757  INFO 12524 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-10-05 17:55:55.772  INFO 12524 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-10-05 17:55:56.281  WARN 12524 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-10-05 17:55:56.297  WARN 12524 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk_h84pd2rtr12isnifnj655rkra" of relation "currency" does not exist, skipping
+2022-10-05 17:55:56.297  WARN 12524 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-10-05 17:55:56.297  WARN 12524 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk_ou8q9939fa4k88wjh17qwcmre" of relation "currency" does not exist, skipping
+2022-10-05 17:55:56.303  WARN 12524 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-10-05 17:55:56.303  WARN 12524 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk_citwcqmn30ea7e2rh2qp646rm" of relation "person" does not exist, skipping
+2022-10-05 17:55:56.309  WARN 12524 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-10-05 17:55:56.309  WARN 12524 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk_r6husltxdp17crwdk415j7taw" of relation "remittance" does not exist, skipping
+2022-10-05 17:55:56.309  WARN 12524 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-10-05 17:55:56.309  WARN 12524 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk_r43af9ap4edm43mmtq01oddj6" of relation "users" does not exist, skipping
+2022-10-05 17:55:56.325  INFO 12524 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-05 17:55:56.325  INFO 12524 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-05 17:55:56.700  INFO 12524 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2a191f83, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@c8531b9, org.springframework.security.web.context.SecurityContextPersistenceFilter@58690f5e, org.springframework.security.web.header.HeaderWriterFilter@39dce2df, org.springframework.security.web.authentication.logout.LogoutFilter@3369e2ce, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5c70c771, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@3663af34, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@3adbd038, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1a390b8c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@337eeceb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5e976553, org.springframework.security.web.session.SessionManagementFilter@5598dff2, org.springframework.security.web.access.ExceptionTranslationFilter@7698a3d9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@35fac3ba]
+2022-10-05 17:55:57.139  INFO 12524 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-10-05 17:55:57.193  INFO 12524 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-10-05 17:55:57.193  INFO 12524 --- [main] c.c.remittance.RemittanceApplication     : Started RemittanceApplication in 3.713 seconds (JVM running for 4.702)
+2022-10-05 17:55:57.632  INFO 12524 --- [RMI TCP Connection(1)-10.100.78.20] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-05 17:55:57.632  INFO 12524 --- [RMI TCP Connection(1)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-05 17:55:57.632  INFO 12524 --- [RMI TCP Connection(1)-10.100.78.20] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
