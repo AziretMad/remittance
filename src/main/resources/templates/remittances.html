@@ -1,10 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Remittances</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+    <script th:src="@{/js/bootstrap.bunble.min.js}"></script>
 </head>
 <body>
-
+<section layout:fragment="custom-content">
+    <div class="container">
+            <h1 class="d-inline">Remittances balance: </h1>
+            <a class="btn btn-primary d-inline float-end" th:href="@{/remittances/form}">Add</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">created at</th>
+                    <th scope="col">code</th>
+                    <th scope="col">amount</th>
+                    <th scope="col">currency</th>
+                    <th scope="col">status</th>
+                </tr>
+            </thead>
+            <thbody>
+                <tr th:each="remittance : ${remittances}">
+                    <td th:text="${remittance.createdDate}"></td>
+                    <td th:text="${remittance.code}"></td>
+                    <td th:text="${remittance.amount}"></td>
+                    <td th:text="${remittance.currency.code}"></td>
+                    <td th:text="${remittance.status}"></td>
+                </tr>
+            </thbody>
+        </table>
+    </div>
+</section>
 </body>
+
 </html>

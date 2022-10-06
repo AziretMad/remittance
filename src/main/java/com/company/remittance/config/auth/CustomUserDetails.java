@@ -1,5 +1,6 @@
 package com.company.remittance.config.auth;
 
+import com.company.remittance.entities.Fund;
 import com.company.remittance.entities.User;
 import com.company.remittance.enums.Role;
 import org.springframework.security.core.GrantedAuthority;
@@ -49,5 +50,9 @@ public class CustomUserDetails implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    public Fund getFund() {
+        return user.getFund();
     }
 }

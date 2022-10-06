@@ -10,5 +10,4 @@ spring:
 
 logging:
   file:
-    path: /logs
-    name: fund.log
+    name: /logs/fund.log

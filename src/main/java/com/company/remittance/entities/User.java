@@ -11,7 +11,6 @@ import javax.persistence.*;
 @Setter
 @Entity
 @NoArgsConstructor
-@AllArgsConstructor
 @Table(name = "users")
 public class User extends AbstractEntity<Long> {
    @Column(unique = true, nullable = false)
@@ -20,4 +19,10 @@ public class User extends AbstractEntity<Long> {
    @ManyToOne
    @JoinColumn(name = "fund_id", nullable = false)
    private Fund fund;
+
+   public User(String username, String password, Fund fund) {
+      this.username = username;
+      this.password = password;
+      this.fund = fund;
+   }
 }

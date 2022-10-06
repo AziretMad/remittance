@@ -1,12 +1,12 @@
 package com.company.remittance.services;
 
+import com.company.remittance.dto.RemittanceDto;
 import com.company.remittance.entities.Remittance;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
-import java.awt.print.Book;
-import java.awt.print.Pageable;
-import java.util.List;
 
 public interface RemittanceService {
-    Page<Book> find(Pageable pageable);
+    Page<Remittance> findAll(Pageable pageable);
+    Remittance save(RemittanceDto remittanceDto);
 }

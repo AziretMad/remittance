@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Remittances</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+    <script th:src="@{/js/bootstrap.bunble.min.js}"></script>
+</head>
+<body>
+<section layout:fragment="custom-content">
+    <div class="container">
+        <h1 class="d-inline">Remittance creation</h1>
+        <a class="btn btn-primary d-inline float-end" th:href="@{/remittances}">Back</a>
+        <form method="post" th:action="@{/remittances}" th:object="${remittance}">
+            <div class="mb-3">
+                <label for="senderNumber" class="form-label">Sender number</label>
+                <input class="form-control" id="senderNumber" th:field="*{senderNumber}"/>
+            </div>
+            <div class="mb-3">
+                <label for="receiverNumber" class="form-label">Receiver number</label>
+                <input class="form-control" id="receiverNumber" th:field="*{receiverNumber}"/>
+            </div>
+            <div class="mb-3">
+                <label for="amount" class="form-label">Amount</label>
+                <input class="form-control" id="amount" th:field="*{amount}"/>
+            </div>
+            <div class="mb-3">
+                <label for="comment" class="form-label">Comment</label>
+                <textarea class="form-control" id="comment" rows="3" th:field="*{comment}"></textarea>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Create">
+            <a class="btn btn-danger" th:href="@{/remittances}">Cancel</a>
+        </form>
+    </div>
+</section>
+</body>
+</html>

@@ -1,8 +1,11 @@
 package com.company.remittance.entities;
 
+import lombok.NoArgsConstructor;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
+@NoArgsConstructor
 @Entity
 public class Currency extends AbstractEntity<Short> {
     @Column(unique = true, nullable = false)
