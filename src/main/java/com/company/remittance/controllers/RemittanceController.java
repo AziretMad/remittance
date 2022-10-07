@@ -14,9 +14,12 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.support.RequestContextUtils;
 
 import javax.persistence.EntityNotFoundException;
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.util.Map;
 import java.util.Optional;
 
 @Controller
@@ -58,8 +61,8 @@ public class RemittanceController {
         if (bindingResult.hasErrors()) return "form";
         try {
             var remittance = remittanceService.save(remittanceDto);
-            redirectAttributes.addAttribute("title", "Remittance successfully created");
-            redirectAttributes.addAttribute("message", "Remittance code: " + remittance.getCode());
+            redirectAttributes.addFlashAttribute("title", "Remittance successfully created");
+            redirectAttributes.addFlashAttribute("message", "Remittance code: " + remittance.getCode());
             return "redirect:/remittances/success";
         } catch (EntityNotFoundException ex) {
             model.addAttribute("error", ex.getMessage());
@@ -74,7 +77,13 @@ public class RemittanceController {
     }
 
     @GetMapping("/success")
-    public String showSuccessPage(Model model) {
+    public String showSuccessPage(
+            HttpServletRequest request,
+            Model model
+    ) {
+        Map<String, ?> inputFlashMap = RequestContextUtils.getInputFlashMap(request);
+        model.addAttribute("title", inputFlashMap.get("title"));
+        model.addAttribute("message", inputFlashMap.get("message"));
         return "success";
     }
 
@@ -88,8 +97,8 @@ public class RemittanceController {
         if (bindingResult.hasErrors()) return "grant";
         try {
             var remittance = remittanceService.grant(remittanceGrantDto.getCode());
-            redirectAttributes.addAttribute("title", "Remittance successfully granted");
-            redirectAttributes.addAttribute("message",
+            redirectAttributes.addFlashAttribute("title", "Remittance successfully granted");
+            redirectAttributes.addFlashAttribute("message",
                     "Granted: " + remittance.getAmount() + " " + remittance.getCurrency().getCode());
             return "redirect:/remittances/success";
         } catch (EntityNotFoundException | GrantImpossibleException | NotEnoughFundsException ex) {
