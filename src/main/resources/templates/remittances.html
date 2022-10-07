@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Remittances</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+    <script th:src="@{/js/bootstrap.bunble.min.js}"></script>
+</head>
+<body>
+<section layout:fragment="custom-content">
+    <div class="container">
+        <h3 class="d-inline" th:text="|Remittances / fund: ${fund.name} / blance: ${fund.balance} ${fund.currency.code}|"></h3>
+        <form method="post" th:action="@{/logout}" class="d-inline float-end">
+            <input type="submit" class="btn btn-danger" value="Logout">
+        </form>
+        <a class="btn btn-primary d-inline float-end" th:href="@{/remittances/form}">Add</a>
+        <a class="btn btn-primary d-inline float-end ml-2" th:href="@{/remittances/grant}">Grant</a>
+        <h5>Filter</h5>
+        <form method="get" th:action="@{/remittances}" th:object="${filter}">
+            <div class="row">
+                <div class="col">
+                    <label for="status" class="form-label">Status</label>
+                    <select id="status" class="form-select" th:field="*{status}">
+                        <option th:value="null" th:text="all"></option>
+                        <option th:value="'CREATED'" th:text="CREATED"></option>
+                        <option th:value="'GRANTED'" th:text="GRANTED"></option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="from" class="form-label">From</label>
+                    <input id="from" class="form-control" type="date" th:field="*{from}">
+                </div>
+                <div class="col">
+                    <label for="to" class="form-label">To</label>
+                    <input id="to" class="form-control" type="date" th:field="*{to}">
+                </div>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Apply">
+            <a class="btn btn-danger" th:href="@{/remittances}">Reset</a>
+        </form>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">created at</th>
+                    <th scope="col">code</th>
+                    <th scope="col">amount</th>
+                    <th scope="col">currency</th>
+                    <th scope="col">status</th>
+                </tr>
+            </thead>
+            <thbody>
+                <tr th:each="remittance : ${remittances}">
+                    <td th:text="${remittance.createdDate}"></td>
+                    <td th:text="${remittance.creator.id} eq ${fund.id} ? ${remittance.code} : ''"></td>
+                    <td th:text="${remittance.amount}"></td>
+                    <td th:text="${remittance.currency.code}"></td>
+                    <td th:text="${remittance.status}"></td>
+                </tr>
+            </thbody>
+        </table>
+        <nav aria-label="..." class="d-flex justify-content-center" th:if="${remittances.totalPages gt 0}">
+            <ul class="pagination">
+                <li class="page-item" th:classappend="${remittances.number eq 0} ? 'disabled'">
+                    <a class="page-link" th:href="@{/remittances?page={id}(id=${remittances.number lt 2 ? 1 : remittances.number})}" aria-disabled="true">Previous</a>
+                </li>
+                <li class="page-item" th:classappend="${i eq remittances.number + 1} ? 'active'"
+                    th:each="i : ${#numbers.sequence( remittances.number + 1, remittances.totalPages > 10 + remittances.number ? remittances.number + 10 : remittances.totalPages, 1)}">
+                    <a class="page-link" th:href="@{/remittances?page={id}(id=${i})}" th:text="${i}"
+                       th:title="${'Page '+ i}"
+                       rel="tooltip"></a>
+                </li>
+                <li class="page-item disabled" th:if="${remittances.number + 10 < remittances.totalPages}">
+                    <a class="page-link svg-icon" href="#">
+                        <span data-feather="more-horizontal" width="20" height="20"></span>
+                    </a>
+                </li>
+                <li class="page-item" th:classappend="${remittances.number + 1 eq remittances.totalPages} ? 'disabled'">
+                    <a class="page-link" th:href="@{/remittances?page={id}(id=${remittances.number + 2})}">Next</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</section>
+</body>
+
+</html>

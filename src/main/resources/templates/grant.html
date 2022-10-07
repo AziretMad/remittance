@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Grant</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+    <script th:src="@{/js/bootstrap.bunble.min.js}"></script>
+</head>
+<body>
+<section layout:fragment="custom-content">
+    <div class="container">
+        <h1 class="d-inline">Grant remittance</h1>
+        <a class="btn btn-primary d-inline float-end" th:href="@{/remittances}">Back</a>
+        <form method="post" th:action="@{/remittances/grant}" th:object="${grant}">
+            <div class="alert alert-danger" th:if="${error}" th:text="${error}"></div>
+            <div class="mb-3">
+                <label for="senderNumber" class="form-label">Remittance code</label>
+                <input class="form-control" id="senderNumber" th:field="*{code}"/>
+                <div class="alert alert-danger" th:if="${#fields.hasErrors('code')}" th:errors="*{code}"></div>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Grant">
+        </form>
+    </div>
+</section>
+</body>
+</html>
