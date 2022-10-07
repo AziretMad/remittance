@@ -1,8 +1,7 @@
 package com.company.remittance.services;
 
-import com.company.remittance.dto.CredentialsDto;
+import com.company.remittance.config.auth.CustomUserDetails;
 
 public interface AuthService {
-    String login(CredentialsDto credentials);
-    void logout();
+    CustomUserDetails getCurrentUser();
 }

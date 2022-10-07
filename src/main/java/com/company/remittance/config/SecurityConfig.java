@@ -27,10 +27,9 @@ public class SecurityConfig {
                         .antMatchers("/resources/**").permitAll().anyRequest().permitAll()
                 )
                 .userDetailsService(customUserDetailService)
-                .formLogin()
-                .defaultSuccessUrl("/remittances", true)
+                .formLogin().defaultSuccessUrl("/remittances", true)
                 .and()
-                .logout().permitAll()
+                .logout().logoutSuccessUrl("/login").permitAll()
                 .and()
                 .build();
     }

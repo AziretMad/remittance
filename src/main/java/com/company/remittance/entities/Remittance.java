@@ -2,8 +2,8 @@ package com.company.remittance.entities;
 
 import com.company.remittance.enums.RemittanceStatus;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -13,6 +13,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @Entity
+@NoArgsConstructor
 public class Remittance extends AbstractEntity<Long> {
     @ManyToOne
     @JoinColumn(name = "sender_id", nullable = false)
@@ -30,8 +31,7 @@ public class Remittance extends AbstractEntity<Long> {
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private RemittanceStatus status = RemittanceStatus.CREATED;
-    @CreatedDate
-    private Date createdDate;
+    private Date createdDate = new Date();
     @Column(length = 500)
     private String comment;
     @ManyToOne
@@ -40,4 +40,20 @@ public class Remittance extends AbstractEntity<Long> {
     @ManyToOne
     @JoinColumn(name = "granter_id")
     private Fund granter;
+
+    public Remittance(
+            Person sender,
+            Person receiver,
+            BigDecimal amount,
+            Currency currency,
+            String comment,
+            Fund creator
+    ) {
+        this.sender = sender;
+        this.receiver = receiver;
+        this.amount = amount;
+        this.currency = currency;
+        this.comment = comment;
+        this.creator = creator;
+    }
 }

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+    <script th:src="@{/js/bootstrap.bunble.min.js}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="d-inline" th:text="${title}"></h1>
+        <a class="btn btn-primary d-inline float-end" th:href="@{/remittances}">Back</a>
+        <h5 th:text="${message}"></h5>
+    </div>
+</body>
+</html>
