@@ -5,6 +5,7 @@ import com.company.remittance.dto.RemittanceFilter;
 import com.company.remittance.dto.RemittanceGrantDto;
 import com.company.remittance.exceptions.GrantImpossibleException;
 import com.company.remittance.exceptions.InvalidCodeException;
+import com.company.remittance.exceptions.InvalidPersonNumberException;
 import com.company.remittance.exceptions.NotEnoughFundsException;
 import com.company.remittance.services.AuthService;
 import com.company.remittance.services.RemittanceService;
@@ -65,7 +66,7 @@ public class RemittanceController {
             redirectAttributes.addFlashAttribute("title", "Remittance successfully created");
             redirectAttributes.addFlashAttribute("message", "Remittance code: " + remittance.getCode());
             return "redirect:/remittances/success";
-        } catch (EntityNotFoundException ex) {
+        } catch (EntityNotFoundException | InvalidPersonNumberException ex) {
             model.addAttribute("error", ex.getMessage());
             return "form";
         }
