@@ -7,6 +7,7 @@ import com.company.remittance.entities.Person;
 import com.company.remittance.entities.Remittance;
 import com.company.remittance.enums.RemittanceStatus;
 import com.company.remittance.exceptions.GrantImpossibleException;
+import com.company.remittance.exceptions.InvalidCodeException;
 import com.company.remittance.exceptions.NotEnoughFundsException;
 import com.company.remittance.repositories.FundRepository;
 import com.company.remittance.repositories.RemittanceRepository;
@@ -65,7 +66,7 @@ public class RemittanceServiceImpl implements RemittanceService {
     @Transactional
     public Remittance grant(String code) {
         Remittance remittance = remittanceRepository
-                .findByCodeAndStatus(UUID.fromString(code), RemittanceStatus.CREATED)
+                .findByCodeAndStatus(parseCode(code), RemittanceStatus.CREATED)
                 .orElseThrow(() -> new EntityNotFoundException("Remittance not found. Code: " + code));
         Fund fund = authService.getCurrentUser().getFund();
         Fund creator = remittance.getCreator();
@@ -89,5 +90,13 @@ public class RemittanceServiceImpl implements RemittanceService {
         remittance.setGranter(fund);
 
         return remittanceRepository.save(remittance);
+    }
+
+    private UUID parseCode(String code) {
+        try {
+            return UUID.fromString(code);
+        } catch (IllegalArgumentException e) {
+            throw new InvalidCodeException("Code is invalid");
+        }
     }
 }
